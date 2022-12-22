@@ -4,12 +4,17 @@
 
 // Definicion de funciones
 int ValidarDato();
+int HallarSuma(int numero);
 
 //Codigo principal
 int main()
 {
-    int Valor;
+    int Valor = 0;
+    int suma = 0;
     Valor = ValidarDato();
+    suma = HallarSuma(Valor);
+
+    printf("La suma es: %d",suma);
 }
 
 int ValidarDato()
@@ -38,4 +43,20 @@ int ValidarDato()
 
     return dato;
 
+}
+
+int HallarSuma(int numero)
+{
+    int suma = 0;
+    int i; 
+
+    for(i = 1 ; i < numero ; i++ )
+    {
+        if (numero % i == 0)
+        {
+            suma += i;
+        }
+    }
+
+    return suma;
 }
