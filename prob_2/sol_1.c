@@ -9,29 +9,47 @@ int HallarSuma(int numero);
 //Codigo principal
 int main()
 {
+    bool ciclo = false;
     int Valor = 0;
     int suma = 0;
-    Valor = ValidarDato();
-    suma = HallarSuma(Valor);
 
-    printf("La suma de sus divisores propios es: %d",suma);
-    printf("\n");
+    while(ciclo == false)
+    {
+        Valor = ValidarDato();
 
-    if (suma < Valor)
-    {
-        printf("El numero %d es deficiente",Valor);
-        printf("\n");
-    }
-    else if (suma == Valor)
-    {
-        printf("El numero %d es perfecto",Valor);
-        printf("\n");
-    }
-    else
-    {
-        printf("El numero %d es abundante",Valor);
-        printf("\n");
-    }
+        if(Valor != 0)
+        {
+            suma = HallarSuma(Valor);
+
+            printf("La suma de sus divisores propios es: %d",suma);
+            printf("\n");
+
+            if (suma < Valor)
+            {
+                printf("El numero %d es deficiente",Valor);
+                printf("\n");
+            }
+            else if (suma == Valor)
+            {
+                printf("El numero %d es perfecto",Valor);
+                printf("\n");
+            }
+            else
+            {
+                printf("El numero %d es abundante",Valor);
+                printf("\n");
+            }
+        }
+        else
+        {
+            printf("Eso es todo amigos");
+            ciclo = true;
+        }
+
+        
+    }    
+
+
 }
 
 int ValidarDato()
@@ -45,11 +63,15 @@ int ValidarDato()
         printf("Ingrese numero: ");
         scanf(" %d",&dato);
         
-        if ((dato > 0) & (dato < 580))
+        if ((dato > 0) && (dato < 580))
         {
                 printf("Numero Valido!");
                 printf("\n");
                 estado = true;
+        }
+        else if (dato == 0)
+        {
+            return dato;
         }
         else
         {
