@@ -1,0 +1,1 @@
+El archivo cuenta la cantidad de caracteres, palabras, lineas que se escriben hasta que se presiona una cierta combinacion de teclas que permiten que el caracter actual sea distinto a EOF
