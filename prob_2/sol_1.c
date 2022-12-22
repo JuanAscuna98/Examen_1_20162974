@@ -14,7 +14,24 @@ int main()
     Valor = ValidarDato();
     suma = HallarSuma(Valor);
 
-    printf("La suma es: %d",suma);
+    printf("La suma de sus divisores propios es: %d",suma);
+    printf("\n");
+
+    if (suma < Valor)
+    {
+        printf("El numero %d es deficiente",Valor);
+        printf("\n");
+    }
+    else if (suma == Valor)
+    {
+        printf("El numero %d es perfecto",Valor);
+        printf("\n");
+    }
+    else
+    {
+        printf("El numero %d es abundante",Valor);
+        printf("\n");
+    }
 }
 
 int ValidarDato()
